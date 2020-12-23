@@ -1,22 +1,67 @@
 import { createRouter, createWebHistory } from 'vue-router';
-//import Home from "../views/Home.vue";
 
-import Login from '@/views/auth/Login.vue';
+/**
+ * Auth Pages
+ */
+import Login from '@/views/auth/Login';
+import Registration from '@/views/auth/Registration';
+
+/**
+ * Admin Pages
+ */
+import Dashboard from '@/views/admin/Dashboard';
+import Settings from '@/views/admin/Settings';
 
 const routes = [
 	{
 		path: '/auth',
-		component: () => import('@/layouts/Auth.vue'),
-		children: [{ path: 'login', name: 'login', component: Login }],
+		component: () => import('@/layouts/Auth'),
+		children: [
+			{ 
+				path: 'login',
+				name: 'login',
+				component: Login
+			},
+			{
+				path: 'registration',
+				name: 'registration',
+				component: Registration,
+			},
+			{
+				path: '/:pathMatch(.*)*',
+				redirect: '/error'
+			},
+		],
 	},
-	// {
-	// 	path: "/about",
-	// 	name: "About",
-	// 	// route level code-splitting
-	// 	// this generates a separate chunk (about.[hash].js) for this route
-	// 	// which is lazy-loaded when the route is visited.
-	// 	component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
-	// },
+	{
+		path: '/admin',
+		component: () => import('@/layouts/Admin'),
+		children: [
+			{
+				path: '',
+				name: 'dashboard',
+				component: Dashboard
+			},
+			{
+				path: 'settings',
+				name: 'settings',
+				component: Settings
+			},
+			{
+				path: '/:pathMatch(.*)*',
+				redirect: '/error'
+			},
+		],
+	},
+	{
+		path: '/error',
+		//name: 'error',
+		component: () => import('@/views/PageNotFound'),
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		redirect: '/error'
+	},
 ];
 
 const router = createRouter({

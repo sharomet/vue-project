@@ -17,7 +17,13 @@ const routes = [
 		path: '/auth',
 		component: () => import('@/layouts/Auth'),
 		children: [
-			{ 
+			{
+				path: '',
+				redirect: {
+					name: 'login'
+				}
+			},
+			{
 				path: 'login',
 				name: 'login',
 				component: Login
@@ -39,6 +45,12 @@ const routes = [
 		children: [
 			{
 				path: '',
+				redirect: {
+					name: 'dashboard'
+				}
+			},
+			{
+				path: 'dashboard',
 				name: 'dashboard',
 				component: Dashboard
 			},

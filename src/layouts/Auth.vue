@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="auth-wrapper">
 		<router-view />
 	</div>
 </template>

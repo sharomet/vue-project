@@ -4,7 +4,6 @@ $enable-prefers-reduced-motion-media-query: false;
 $enable-responsive-font-sizes:              true;
 $body-bg:                                   #f8f8f8;
 $body-color:                                #656565;
-$label-margin-bottom:                       0.2rem;
 
 /* Primary Colors */
 $primary:                                   #5f9ebb;
@@ -12,6 +11,10 @@ $success:                                   #3e9991;
 $info:                                      #2784b9;
 $warning:                                   #ac7833;
 $danger:                                    #9c3e3e;
+
+/* Forms */
+$form-group-margin-bottom:                  0.7rem;
+$label-margin-bottom:                       0.15rem;
 
 /* Auth */
 $auth-card-header-bg:                       $primary;

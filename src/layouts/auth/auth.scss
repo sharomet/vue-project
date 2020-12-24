@@ -6,18 +6,13 @@
 	justify-content: center;
 }
 .auth-card {
-	background-color: $card-bg;
 	flex: 0 1 400px;
 	max-width: 400px;
 	border: 1px solid #eee;
 	margin: auto 1rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-	&__header,
-	&__body {
-		padding: 1rem;
-	}
-	&__header {
-		background-color: $card-header-bg;
-		color: $card-header;
+	.card-header {
+		background-color: $auth-card-header-bg;
+		color: $auth-card-header;
 	}
 }

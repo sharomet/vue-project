@@ -1,14 +1,14 @@
 /* Global */
-$enable-rounded:                              false;
-//$enable-prefers-reduced-motion-media-query:   true !default;
-$enable-responsive-font-sizes:                true;
+$enable-rounded:                            false;
+$enable-prefers-reduced-motion-media-query: true;
+$enable-responsive-font-sizes:              true;
 $body-bg:                                   #f8f8f8;
 $body-color:                                #656565;
+$label-margin-bottom:                       0.2rem;
 
 /* Primary Colors */
 $primary:                                   #5f9ebb;
 
 /* Auth */
-$card-bg:                                   #fff;
-$card-header-bg:                              $primary;
-$card-header:                               #fff;
+$auth-card-header-bg:                       $primary;
+$auth-card-header:                          #fff;

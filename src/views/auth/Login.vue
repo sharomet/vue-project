@@ -1,10 +1,9 @@
 <template>
-	<div class="auth-card">
-		<div class="auth-card__header">
+	<div class="card auth-card">
+		<div class="card-header">
 			Login
 		</div>
-		<div class="auth-card__body">
-			
+		<div class="card-body">
 			<form>
 				<div class="form-group">
 					<label for="email">
@@ -18,20 +17,31 @@
 					</label>
 					<input type="password" id="password" class="form-control">
 				</div>
-				<div class="text-right">
-					<button class="btn btn-primary" type="submit">
-						Send
-					</button>
+				<div class="form-row align-items-center">
+					<div class="col-sm-6">
+						<div class="custom-control custom-checkbox">
+							<input type="checkbox" name="remember" class="custom-control-input" id="remember">
+							<label class="custom-control-label" for="remember">
+								Remember me
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="text-right">
+							<router-link :to="{ name: 'registration' }">
+								Registration
+							</router-link>
+							<button class="btn btn-primary ml-2" type="submit">
+								Send
+							</button>
+						</div>
+					</div>
 				</div>
 			</form>
-
 		</div>
 	</div>
 </template>
 
 <script>
-import './auth.scss';
-export default {
-	
-}
+export default {}
 </script>

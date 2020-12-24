@@ -15,7 +15,7 @@ import Settings from '@/views/admin/Settings';
 const routes = [
 	{
 		path: '/auth',
-		component: () => import('@/layouts/Auth'),
+		component: () => import('@/layouts/auth/Auth'),
 		children: [
 			{
 				path: '',

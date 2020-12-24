@@ -5,5 +5,6 @@
 </template>
 
 <script>
+import './auth.scss';
 export default {}
 </script>

@@ -1,5 +1,3 @@
 <template>
-	<div>
-		Home Page
-	</div>
+	<router-view />
 </template>

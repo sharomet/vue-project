@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
+/* Static Pages */
+import Home from '@/views/Home';
+
 /**
  * Auth Pages
  */
@@ -13,6 +16,17 @@ import Dashboard from '@/views/admin/Dashboard';
 import Settings from '@/views/admin/Settings';
 
 const routes = [
+	{
+		path: '/',
+		component: () => import('@/layouts/Default'),
+		children: [
+			{
+				path: '',
+				name: 'home',
+				component: Home
+			},
+		],
+	},
 	{
 		path: '/auth',
 		component: () => import('@/layouts/auth/Auth'),
@@ -67,7 +81,7 @@ const routes = [
 	},
 	{
 		path: '/error',
-		//name: 'error',
+		name: 'error',
 		component: () => import('@/views/PageNotFound'),
 	},
 	{

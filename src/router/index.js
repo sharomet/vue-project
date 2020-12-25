@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-/* Static Pages */
-import Home from '@/views/Home';
-
 /**
  * Auth Pages
  */
@@ -18,14 +15,9 @@ import Settings from '@/views/admin/Settings';
 const routes = [
 	{
 		path: '/',
-		component: () => import('@/layouts/Default'),
-		children: [
-			{
-				path: '',
-				name: 'home',
-				component: Home
-			},
-		],
+		redirect: {
+			name: 'dashboard'
+		}
 	},
 	{
 		path: '/auth',
@@ -46,11 +38,7 @@ const routes = [
 				path: 'registration',
 				name: 'registration',
 				component: Registration,
-			},
-			{
-				path: '/:pathMatch(.*)*',
-				redirect: '/error'
-			},
+			}
 		],
 	},
 	{
@@ -72,11 +60,7 @@ const routes = [
 				path: 'settings',
 				name: 'settings',
 				component: Settings
-			},
-			{
-				path: '/:pathMatch(.*)*',
-				redirect: '/error'
-			},
+			}
 		],
 	},
 	{

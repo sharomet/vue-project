@@ -1,31 +1,34 @@
 <template>
-	<div>
-		dasboard
-		<ul>
-			<li
-				v-for="user in users"
-				:key="user.id">
-				{{ user.first_name }}
-			</li>
-		</ul>
-	</div>
+  <div>
+    dasboard
+    <ul>
+      <li v-for="user in users" :key="user.id">
+        {{ user.first_name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import { usersMock } from '../../mock/users'
-//import fetchUsers from '../../mock/index'
+import { onMounted, ref } from 'vue'
+
+import axios from 'axios';
 
 export default {
-	/*data() {
-		return {
-			users: usersData
-		}
-	}*/
-	setup() {
-		const users = usersMock;
-		return {
-			users
-		}
-	}
-}
+  setup() {
+    let users = ref([]);
+
+    onMounted(() => {
+      axios.get('http://localhost:3000/users')
+        .then(usersData => {
+          users.value = usersData.data
+        })
+        .catch(err => console.log(err));
+    });
+
+    return {
+      users
+    }
+  }
+};
 </script>
